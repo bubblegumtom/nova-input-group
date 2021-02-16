@@ -1,8 +1,8 @@
 <template>
-    <default-field :field="field" :errors="errors">
+    <default-field :field="field" :errors="errors" :show-help-text="showHelpText">
         <template slot="field">
             <div class="flex flex-wrap items-stretch w-full mb-4 relative">
-                <div class="flex -mr-px w-2/5" v-if="position === 'before'">
+                <div class="flex -mr-px" v-if="position === 'before'">
                     <span class="w-full flex px-3 bg-40 form-input-bordered rounded-r-none items-center border-r-0">{{ text }}</span>
                 </div>
                 <input
@@ -12,7 +12,7 @@
                     :placeholder="field.name"
                     v-model="value"
                 />
-                <div class="flex -mr-px w-2/5" v-if="position === 'after'">
+                <div class="flex -mr-px" v-if="position === 'after'">
                     <span class="w-full flex px-3 bg-40 form-input-bordered rounded-l-none items-center border-l-0">{{ text }}</span>
                 </div>
             </div>
